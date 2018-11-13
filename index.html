@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="is-is">
+  <head>
+    <meta charset="UTF-8">
+    <title>❤ Hinn árlegi fengitími Miracle ❤</title>
+    <!--meta name="viewport" content="width=device-width, initial-scale=1"-->
+	<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 1em;
+	background: black;
+	text-shadow: 1px 1px 2px black;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 100%;
+    padding: 0 10px;
+}
+
+#myBtn {
+	position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: 100%;
+	height: 100%;
+    font-size: 8em;
+    padding: 10%;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+</style>
+  </head>
+  <body>
+<!-- The video -->
+<video loop id="myVideo" preload="auto" height="360" width="480" poster="lyfta.jpg">
+  <source src="lyfta.mp4" type="video/mp4">
+  <source src="lyfta.webm" type="video/webm">
+</video>
+
+<!-- Optional: some overlay text to describe the video -->
+<div class="content">
+  <h1>ESCAPE 2.0: Die Harderer</h1>
+  <p>Fimmtudaginn 6. desember KL 16:30 ætlum við að verða full, flýja af hólmi og éta óvistvænar beljur</p>
+  <p>
+  KL 17:00 - Bjórgarðurinn<br/>
+  KL 18:00 - Reykjavík Escape<br/>
+  KL 19:30 - <del>Hamborgarafabrikkan</del> KEX HOSTEL<br/>
+  KL 23:00 - Snáfiði!
+  </p>
+<p id="bigdemo">Það eru aðeins <span id="demo"></span> í þetta</p>
+  
+  <!-- Use a button to pause/play the video with JavaScript -->
+  
+</div>
+
+<button id="myBtn" onclick="myFunction()">7 af hverjum 5 smella á þetta!</button>
+
+<script>
+// Get the video
+var video = document.getElementById("myVideo");
+
+// Get the button
+var btn = document.getElementById("myBtn");
+
+video.addEventListener('loadeddata', function() {
+
+  if(video.readyState = 4) {
+    video.play();
+  }
+
+});
+
+// Pause and play the video, and change the button text
+function myFunction() {
+		video.play();
+        btn.remove();
+}
+</script>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 6, 2018 16:30:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + " dagar " + hours + " klukkustundir "
+  + minutes + " mínútur og " + seconds + " sekúndur ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("bigdemo").innerHTML = "ÞÚ ERT ALLTOF FOKKING SEINN!";
+  }
+}, 1000);
+</script>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-78881266-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
